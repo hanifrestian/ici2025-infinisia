@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Page</title>
+</head>
+<body>
+  <div id="name-display"></div>
+  <script>
+    // Extract the "name" parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    if (name) {
+      document.getElementById('name-display').innerHTML = `Welcome, ${name}!`;
+    } else {
+      document.getElementById('name-display').innerHTML = `Welcome, Guest!`;
+    }
+  </script>
+</body>
+</html>
