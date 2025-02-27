@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Customer Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Portal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sanchez:wght@400;700&display=swap');
+  </style>
 </head>
-<body>
-  <div id="name-display"></div>
+<body class="bg-gray-50 text-gray-900 font-sans leading-normal tracking-normal">
+  <div class="container mx-auto px-4 py-12">
+    <div class="flex flex-col items-center justify-center text-center">
+      <img src="https://via.placeholder.com/150" alt="Logo" class="w-32 h-32 mb-8">
+      <h1 class="text-4xl font-bold mb-6 animate-pulse">Welcome, <span id="name-display">Guest</span>!</h1>
+      <p class="text-lg mb-8">Your personalized experience awaits.</p>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        Get Started
+      </button>
+    </div>
+  </div>
+
   <script>
-    // Extract the "name" parameter from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('name');
-    if (name) {
-      document.getElementById('name-display').innerHTML = `Welcome, ${name}!`;
-    } else {
-      document.getElementById('name-display').innerHTML = `Welcome, Guest!`;
-    }
+    document.getElementById('name-display').textContent = name || 'Guest';
   </script>
 </body>
 </html>
